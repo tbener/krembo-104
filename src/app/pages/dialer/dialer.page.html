@@ -1,0 +1,20 @@
+<app-page-header header="Dialer"></app-page-header>
+
+<ion-content [fullscreen]="true">
+    <ion-item *ngFor="let contact of contacts">
+        <app-dialer-contact [contact]="contact"></app-dialer-contact>
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let user of users">
+        <ion-avatar slot="start">
+          <img [src]="user.picture.thumbnail">
+        </ion-avatar>
+        <ion-label>
+          <h2 class="ion-text-capitalize">{{ user.name.first }} {{ user.name.last }}</h2>
+          <p>{{ user.email }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+</ion-content>
