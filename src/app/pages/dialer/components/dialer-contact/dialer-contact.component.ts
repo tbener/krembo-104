@@ -19,9 +19,13 @@ export class DialerContactComponent implements OnInit {
     }
 
     call() {
+        alert('calling');
         this.callNumber.callNumber(this.contact.number, true)
             .then(res => console.log('Launched dialer!', res))
-            .catch(err => console.log('Error launching dialer', err));
+            .catch(err => {
+                console.log('Error launching dialer', err);
+                alert(`Error: ${err}`);
+            });
     }
 
 }
